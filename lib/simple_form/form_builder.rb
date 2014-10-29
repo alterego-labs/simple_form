@@ -464,7 +464,7 @@ module SimpleForm
 
     def mapping_override(klass) #:nodoc:
       name = klass.name
-      if name =~ /^SimpleForm::Inputs/
+      if name =~ /^SimpleForm::Inputs/ && !name.include?('FileInput')
         attempt_mapping name.split("::").last, Object
       end
     end
